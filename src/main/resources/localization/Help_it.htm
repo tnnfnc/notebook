@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+<title>Istruzioni di ReaderMap</title>
+</head>
+<body>
+<h1>Istruzioni di ReaderMap</h1>
+ReaderMap serve ad organizzare le tue sottolineature migliorando il tuo livello di comprensione del libro.
+<h2>Come funziona?</h2> 
+Mentre leggi un e-book puoi sottolineare i concetti chiave e aggiungere delle note, il lettore le memorizza
+internamente, ma non ti permette di vederle in un modo ben organizzato secondo i capitoli.
+<br />
+ReaderMap ti permette di creare una mappa concettuale partendo dalle tue sottolineature e note
+disponendole in ordine sotto ai capitoli del libro.
+Puoi partire da questa mappa, raffinarla e riorganizzarla secondo le tue esigenze usando il programma open source 
+<a href="http://freemind.sourceforge.net/">FreeMind</a>.<br />
+<h2>Istruzioni di ReaderMap</h2>
+<ol>
+<li>Trova il file <u>MyClippings.txt</u> nel tuo book reader</li>
+<li>Salva una copia del file nel tuo PC</li>
+<li>Esegui ReaderMap e premi il bottone <cite>Importa i miei appunti</cite></li>
+<li>Seleziona uno dei libri dall'elenco che compare in alto a destra</li>
+<li>Puoi inserire, generare l'indice del libro, o crealo direttamente</li>
+<li>Genera la mappa delle tue note e sottolineature premendo il bottone <cite>Genera la mappa</cite> </li>
+<li>Migliora la mappa col software <cite><a href="http://freemind.sourceforge.net/">FreeMind</a></cite>
+(http://freemind.sourceforge.net/) </li>
+</ol>
+<h2>Suggerimenti per generare l'indice</h2>
+Per meglio organizzare le tue note è importante avere a disposizione l'elenco dei capitoli del libro. 
+Il modo migliore è farlo generare in automatico dal programma, ma per fare ciò è necessario che tu abbia 
+segnato tutti i capitoli durante la lettura, contrassegnandoli con il simbolo di capitolo (vedi le impostazioni del programma).
+<h3>Come far generare i capitoli a ReaderMap</h3>
+Per far generare l'indice da ReaderMap devi avere precedentemente contrassegnato i capitolo del libro.
+Per contrassegnare i capitoli mano a mano che stai leggendo un libro devi seguire le seguenti istruzioni:
+<ul>
+<li>Seleziona il titolo del capitolo sul tuo reader</li>
+<li>Premi <code>Aggiungi nota</code> </li>
+<li>Scrivi il simbolo scelto per contrassegnare i capitoli: ad esempio il simbolo <code>§</code> 
+o altro che avrai assegnato nelle impostazioni del programma</li>
+<li>Premi <code>Salva</code></li>
+</ul>
+<h3>Caricare l'indice del libro da un file</h3>
+Puoi creare l'indice del libro da un file scritto usando un semplice <cite>Editor di testo</cite>, 
+e poi importarlo in ReaderMap. <br />
+Il formato del file deve essere come di seguito descritto e ogni capitolo corrisponde a una nuova riga di testo:
+<ul>
+<li>Titolo: il titolo del libro (caratteri con punteggiatura e numeri) </li>
+<li>premi <code>tab</code></li>
+<li>Numero: il numero del capitolo (caratteri con punteggiatura e numeri)</li>
+<li>premi <code>tab</code></li>
+<li>Inizio: posizione di inizio capitolo, la devi prendere dal book reader, (numero intero)</li>
+<li>premi <code>tab</code></li>
+<li>End: posizione di fine capitolo (numero intero), puoi lasciare in bianco, il programma la calcola da solo</li>
+<li>premi <code>tab</code></li>
+<li>Commeno: i tuoi  commenti (caratteri con punteggiatura e numeri) </li>
+<li>premi <code>tab</code></li>
+<li>Livello del capitolo: (numero intero) puoi lasciare in bianco, il programma la calcola da solo</li>
+<li>premi <code>Invio</code></li>
+</ul>
+Quando hai finito di scrivere il file salvalo e importalo premendo il bottone <code>Importa l'indice</code>.
+<h3>Creare l'indice direttamente</h3>
+Come ultima possibilità puoi creare l'indice direttamente con ReaderMap, 
+il programma ti permette di esportarlo come testo per poterlo successivamente reimportare. Se vuoi salvare l'indice
+per un uso futuro è consigliabile esportarlo.<br />
+Nel riquadro  <cite>Capitolo</cite> devi inserire i dati fondamentali: il <cite>Titolo</cite>,  
+la <cite>posizione d'inizio</cite>, e opzionalmente un <cite>Commento</cite> e il <cite>Numero</cite>. 
+Premi poi il bottone di <cite>Aggiungi capitolo</cite>. <br />
+Se vuoi cambiare un capitolo devi prima selezionarlo dal riquadro dell'indice, 
+poi modificare i dati che vuoi e premere il bottone  <cite>Modifica il capitolo</cite>. <br />
+Se hai sbagliato e vuoi rimuovere un capitolo, o ci sono più capitoli o capitoli doppi, seleziona quello che vuoi rimuovere
+e premi il bottone <cite>Rimuovi il capitolo</cite>.
+<h2>Impostazioni ReaderMap</h2>
+Le impostazioni funzionano bene nella maggior parte dei casi, ma se vuoi fare altre prove puoi modificarle. Il programma 
+non memorizza nessuna impostazione e all'avvio ricarica le impostazioni di base.
+<h2>Estendi ReaderMap per il tuo e-book reader</h2>
+ReaderMap funziona con il file <u>Kindle MyClippings.txt</u>, se vuoi puoi estenderlo ad altri dispositivi.
+<h4>Caratteristiche</h4>
+<ul>
+<li><b>ReaderMap</b> calcola automaticamente la posizione di fine capitolo.</li>
+<li>Anche se generi l'indice in modo automatico potrebbero verificarsi errori nell'elenco dei capitoli. 
+Puoi cancellare capitoli doppi e inserirne di mancanti senza problemi.</li>
+<li>Se il programma trova note senza un capitolo di riferimento genererà un capitolo vuoto per posizionare gli elementi
+orfani. Puoi modificarlo e rielaborare successivamente la tua mappa con <b>Freemind</b>.</li>
+</ul>
+<h4>Funzionalità future</h4>
+<ul>
+<li>Semplice sintassi di formattazione per i nodi.</li>
+<li>Esportazione della mappa in più formati.</li>
+</ul>
+</body>
+</html>
