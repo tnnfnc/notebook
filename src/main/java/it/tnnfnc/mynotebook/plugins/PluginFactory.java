@@ -18,7 +18,7 @@ public class PluginFactory {
 	public I_BookReaderPlugin getPlugin(String className) {
 		I_BookReaderPlugin plugIn;
 		try {
-			plugIn = (I_BookReaderPlugin) Class.forName(className).newInstance();
+			plugIn = (I_BookReaderPlugin) Class.forName(className).getDeclaredConstructor().newInstance();
 			return plugIn;
 		} catch (Exception e) {
 			e.printStackTrace();
