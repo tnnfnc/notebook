@@ -10,9 +10,6 @@ import it.tnnfnc.mynotebook.Book;
 import it.tnnfnc.mynotebook.Element;
 
 public class BookTreeCellRenderer extends DefaultTreeCellRenderer {
-	// public class BookTreeCellRenderer extends JLabel implements
-	// TreeCellRenderer {
-
 	/**
 	 * 
 	 */

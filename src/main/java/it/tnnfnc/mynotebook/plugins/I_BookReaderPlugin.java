@@ -59,6 +59,9 @@ public interface I_BookReaderPlugin {
 	 * 
 	 * @param in
 	 *            the input resource.
+	 * 
+	 * @return the map of books.
+	 * 
 	 * @throws IOException 
 	 */
 	Map<String, Book> parse(InputStream in) throws IOException;
@@ -69,7 +72,7 @@ public interface I_BookReaderPlugin {
 	 * 
 	 * @param book
 	 *            the book.
-	 * @return
+	 * @return the book.
 	 */
 	Book buildBookHierarchy(Book book);
 

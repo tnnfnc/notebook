@@ -18,7 +18,6 @@ public class TreeNodeBuilder implements I_MapBuilder {
 	private DefaultMutableTreeNode root;
 	private DefaultMutableTreeNode node;
 	private HashMap<Element, DefaultMutableTreeNode> parentNodes;
-	// private final boolean DEBUG = true;
 
 	public TreeNodeBuilder() {
 
@@ -59,9 +58,7 @@ public class TreeNodeBuilder implements I_MapBuilder {
 	@Override
 	public void isLeaf(Element e) {
 		parentNodes.remove(e);
-		// if (DEBUG) {
-		// System.out.println("TreeNodeBuilder " + parentNodes.size());
-		// }
+
 	}
 
 	@Override

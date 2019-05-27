@@ -67,23 +67,6 @@ public class MyNoteBookBundle extends ListResourceBundle {
 				{ Constants.SHOW_POSITION, "Show positions" }, //
 				// Kindle settings
 				{ Constants.READER_SETTINGS, "Kindle" }, //
-				// { Constants.PREF_HEADER_DELIMITER, "Header data delimiters"
-				// }, //
-				// { Constants.PREF_INFO_DELIMITER, "Book informations
-				// delimiter" }, //
-				// { Constants.PREF_POSITION_DELIMITER, "Note position
-				// delimiter" }, //
-				// { Constants.PREF_RECORD_DELIMITER, "End of record delimiter"
-				// }, //
-				// Not localize
-				// { Constants.PREF_INFO_DELIMITER_DEF, "\\(" }, //
-				// { Constants.PREF_HEADER_DELIMITER_DEF, "\\|" }, //
-				// { Constants.PREF_POSITION_DELIMITER_DEF, "-" }, //
-				// { Constants.PREF_RECORD_DELIMITER_DEF, "==========" }, //
-				// { Constants.PREF_CHAPTER_MARKER, "Chapter marker" }, //
-				// { Constants.PREF_CHAPTER_MARKER_DEF, "�" }, //
-				// { Constants.PREF_DATE_PATTERN, "EEEE d MMMM yyyy HH:mm:ss" },
-				// //
 				// Clippings
 				{ Constants.CLIPPINGS, "My clippings file" }, //
 				// Notes

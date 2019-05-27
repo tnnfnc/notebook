@@ -110,7 +110,7 @@ public class MyNoteBook extends AbstractApplication<MapDocument> {
 	private JCheckBox showNote;
 	private JCheckBox showPosition;
 
-	private final JFileChooser fileChooser = new JFileChooser();;
+	private final JFileChooser fileChooser = new JFileChooser();
 
 	// Program settings
 	private PropertiesPanel propertiesPanel;
@@ -123,7 +123,6 @@ public class MyNoteBook extends AbstractApplication<MapDocument> {
 
 	// Log options
 	private LogsPanel logPanel;
-	// private final String plainStyle = PredefinedStyles.blackWhite2;
 	private final String emphasizedStyle = PredefinedStyles.importantStyle;
 	private final String warningStyle = PredefinedStyles.orange2;
 	private final String infoStyle = PredefinedStyles.green2;
@@ -231,7 +230,8 @@ public class MyNoteBook extends AbstractApplication<MapDocument> {
 		// Help Panel
 		JTextPane helpPane = new JTextPane();
 		helpPane.setEditable(false);
-		java.net.URL helpURL = MyNoteBookBundle.class.getResource(getLocalization().getString(Constants.HELP_FILE)); // "ReaderMapHelp.htm"
+		String path = "../../../../localization/"+getLocalization().getString(Constants.HELP_FILE);
+		java.net.URL helpURL = MyNoteBookBundle.class.getResource(path); // "ReaderMapHelp.htm"
 		if (helpURL != null) {
 			try {
 				helpPane.setPage(helpURL);
@@ -255,8 +255,6 @@ public class MyNoteBook extends AbstractApplication<MapDocument> {
 				getLocalization().getString(Constants.BOOK)));
 		scrollBookList.setPreferredSize(new Dimension(250, 180));
 		scrollBookList.setMinimumSize(new Dimension(250, 150));
-//		scrollContents
-//				.setBorder(BorderFactory.createTitledBorder(getLocalization().getString(Constants.LIST_OF_BOOKS)));
 
 		// Chapter panel
 		JPanel chapterPanel = new JPanel(new GridLayout(0, 2));
@@ -264,8 +262,6 @@ public class MyNoteBook extends AbstractApplication<MapDocument> {
 				getLocalization().getString(Constants.CHAPTER)));
 
 		// Preview panel
-
-		// previewPanel.setContentType("text/plain");
 
 		JScrollPane previewScrollNodePane = new JScrollPane(treeNodePanel);
 		previewScrollNodePane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
@@ -322,17 +318,9 @@ public class MyNoteBook extends AbstractApplication<MapDocument> {
 		p.setLayout(new GridBagLayout());
 		GridBagConstraints gbc = new GridBagConstraints();
 		GridBagLayoutUtility.initConstraints(gbc);
-
-		// JPanel p = new JPanel();
 		p.add(mapSelector, gbc);
 		p.add(generateBookMap, GridBagLayoutUtility.right(gbc));
 		p.add(previewBookMap, GridBagLayoutUtility.right(gbc));
-
-		// GridBagLayoutUtility.newLine(gbc);
-		// p.add(showBookmark, gbc);
-		// p.add(showNote, GridBagLayoutUtility.newLine(gbc));
-		// p.add(showPosition, GridBagLayoutUtility.newLine(gbc));
-
 		p.setBorder(BorderFactory.createTitledBorder(getLocalization().getString(Constants.GENERATE_BOOK_MAP)));
 		return p;
 	}
@@ -352,7 +340,6 @@ public class MyNoteBook extends AbstractApplication<MapDocument> {
 				editingBook = getPlugin().buildBookHierarchy(b);
 				editingBook.setHierarchyOn(true);
 				((DefaultListModel<Book>) listOfBooks.getModel()).set(listOfBooks.getSelectedIndex(), editingBook);
-
 				logPanel.appendLog(getLocalization().getString(Constants.GENERATE_TABLE_OF_CONTENTS) + " "
 						+ editingBook.getTitle(), emphasizedStyle);
 			} else {
@@ -384,8 +371,7 @@ public class MyNoteBook extends AbstractApplication<MapDocument> {
 	/**
 	 * Launch the application.
 	 * 
-	 * @param args
-	 *            no arguments needed.
+	 * @param args no arguments needed.
 	 */
 	public static void main(String[] args) {
 		javax.swing.SwingUtilities.invokeLater(new Runnable() {
@@ -494,8 +480,7 @@ public class MyNoteBook extends AbstractApplication<MapDocument> {
 	/**
 	 * Set the active plug in.
 	 * 
-	 * @param plugin
-	 *            the active plug in.
+	 * @param plugin the active plug in.
 	 */
 	public void setPlugin(I_BookReaderPlugin plugin) {
 		properties = plugin.getProperties();
@@ -627,7 +612,6 @@ public class MyNoteBook extends AbstractApplication<MapDocument> {
 		}
 
 		private void setMindMapBuilder(I_MapBuilder selectedItem) {
-			// TODO Auto-generated method stub
 
 		}
 	}
@@ -664,7 +648,7 @@ public class MyNoteBook extends AbstractApplication<MapDocument> {
 						mapBuilder.setOutputStream(out);
 						editingBook.accept(new BookVisitor(mapBuilder));
 						previewPanel.setText(new String(out.toByteArray(), "UTF-8"));
-						
+
 						logPanel.appendLog(getLocalization().getString(Constants.PREVIEW_BOOK_MAP) + ": " //
 								+ editingBook.getTitle(), emphasizedStyle);
 					}
@@ -714,11 +698,9 @@ public class MyNoteBook extends AbstractApplication<MapDocument> {
 
 						outFile.close();
 
-						logPanel.appendLog(
-								getLocalization().getString(Constants.GENERATE_BOOK_MAP) + ": " //
-										+ editingBook.getTitle() + " - "
-										+ getLocalization().getString(Constants.FILENAME) + ": " + f.getName(),
-								emphasizedStyle);
+						logPanel.appendLog(getLocalization().getString(Constants.GENERATE_BOOK_MAP) + ": " //
+								+ editingBook.getTitle() + " - " + getLocalization().getString(Constants.FILENAME)
+								+ ": " + f.getName(), emphasizedStyle);
 					} catch (Exception ex) {
 						PopMessage.displayError(getFrame(), getLocalization().getString(Constants.GENERATE_BOOK_MAP)
 								+ " \n" + f.getName() + " \n" + ex.getMessage());

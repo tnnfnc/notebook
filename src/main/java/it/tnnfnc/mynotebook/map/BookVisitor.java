@@ -20,7 +20,6 @@ public class BookVisitor implements I_BookVisitor {
 	private I_MapBuilder mapBuilder;
 	private Map<Integer, Integer> hierarchyLevel = new HashMap<>();
 	private Map<Integer, Element> hierarchyElement = new HashMap<>();
-	private final boolean DEBUG = false;
 
 	/**
 	 * Constructor.
@@ -61,7 +60,6 @@ public class BookVisitor implements I_BookVisitor {
 		// Traverse children
 		I_Iterator<? extends Element> iterator = e.getIterator();
 
-		// boolean b = iterator.hasNext();
 		if (!iterator.hasNext()) {
 			isLeaf(e);
 			closeElement(e);
@@ -113,11 +111,6 @@ public class BookVisitor implements I_BookVisitor {
 		e.setLevel(level + "");
 		e.setNumber(numberBuffer.toString());
 
-		// if (DEBUG) {
-		// System.out.println("Set hierarchy = " + hierarchyLevel + " | element
-		// number = " + e.getNumber());
-		// System.out.println("Element hierarchy = " + hierarchyElement);
-		// }
 	}
 
 	/**
@@ -128,16 +121,12 @@ public class BookVisitor implements I_BookVisitor {
 	 */
 	public void openBook(Book book) {
 		mapBuilder.openBook(book);
-		// if (DEBUG)
-		// System.out.println("open book - The book is: " + book);
 	}
 
 	/**
 	 * Call back after visiting the book.
 	 */
 	public void closeBook() {
-		if (DEBUG)
-			System.out.println("close book ");
 		mapBuilder.closeBook();
 	}
 
@@ -148,8 +137,6 @@ public class BookVisitor implements I_BookVisitor {
 	 *            the element.
 	 */
 	public void openElement(Element e) {
-		// if (DEBUG)
-		// System.out.println("open element ");
 		setHierarchy(e);
 		mapBuilder.openElement(e);
 	}
@@ -160,8 +147,6 @@ public class BookVisitor implements I_BookVisitor {
 	 * @param e
 	 */
 	public void closeElement(Element e) {
-		// if (DEBUG)
-		// System.out.println("close element, depth = " + hierarchyLevel);
 		mapBuilder.closeElement(e);
 	}
 
@@ -179,8 +164,6 @@ public class BookVisitor implements I_BookVisitor {
 	 *            the element.
 	 */
 	public void isLeaf(Element e) {
-		// if (DEBUG)
-		// System.out.println("is leaf, depth = " + hierarchyLevel + e);
 		mapBuilder.isLeaf(e);
 	}
 

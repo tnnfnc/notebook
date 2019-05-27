@@ -46,7 +46,7 @@ public class KindlePluginBundle_it extends ListResourceBundle {
 				{ KindleConstants.PREF_HEADER_DELIMITER_DEF, "\\|" }, //
 				{ KindleConstants.PREF_POSITION_DELIMITER_DEF, "-" }, //
 				{ KindleConstants.PREF_RECORD_DELIMITER_DEF, "==========" }, //
-				{ KindleConstants.PREF_CHAPTER_MARKER_DEF, "�" }, //
+				{ KindleConstants.PREF_CHAPTER_MARKER_DEF, "§" }, //
 				{ KindleConstants.PREF_SCAN_SPAN_DEF, "1" }, //
 				{ KindleConstants.PREF_DATE_PATTERN_DEF, "EEEE d MMMM yyyy HH:mm:ss" }, //
 				//
