@@ -151,14 +151,10 @@ public class MyNoteBook extends AbstractApplication<MapDocument> {
 		previewPanel = new JTextArea();
 		previewPanel.setEditable(false);
 		previewPanel.setLineWrap(false);
-		// previewPanel = new JTextPane();
 		treeNodePanel = new JPanel(new BorderLayout());
 		//
 		logPanel = new LogsPanel();
 		logPanel.setVisibleRowCount(2);
-
-		// Properties loadDefaultProperties();
-		// Nothing to load
 
 		// Settings
 		propertiesPanel = new PropertiesPanel();
@@ -230,7 +226,7 @@ public class MyNoteBook extends AbstractApplication<MapDocument> {
 		// Help Panel
 		JTextPane helpPane = new JTextPane();
 		helpPane.setEditable(false);
-		String path = "../../../../localization/"+getLocalization().getString(Constants.HELP_FILE);
+		String path = "/localization/" + getLocalization().getString(Constants.HELP_FILE);
 		java.net.URL helpURL = MyNoteBookBundle.class.getResource(path); // "ReaderMapHelp.htm"
 		if (helpURL != null) {
 			try {
@@ -239,8 +235,7 @@ public class MyNoteBook extends AbstractApplication<MapDocument> {
 				PopMessage.displayError(getFrame(), getLocalization().getString(Constants.BAD_URL) + ": " + helpURL);
 			}
 		} else {
-			PopMessage.displayError(getFrame(), getLocalization().getString(Constants.BAD_URL) + ": " + helpURL);
-			System.err.println("Couldn't find file " + helpURL);
+			PopMessage.displayError(getFrame(), getLocalization().getString(Constants.BAD_URL) + ": " + path);
 		}
 		JScrollPane helpScrollPane = new JScrollPane(helpPane);
 		helpScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);

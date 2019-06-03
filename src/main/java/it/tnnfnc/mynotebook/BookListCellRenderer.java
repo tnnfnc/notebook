@@ -27,22 +27,12 @@ public class BookListCellRenderer extends DefaultListCellRenderer {
 			text = text + " - " + book.getContent();
 
 		Component c = super.getListCellRendererComponent(list, text, index, isSelected, cellHasFocus);
-		
-		ImageIcon icon = createImageIcon("../../../images/ebooks-32.png", " ");
+		String path = "/images/ebooks-32.png";
+		java.net.URL imgurl = BookListCellRenderer.class.getResource(path);
+		ImageIcon icon = new ImageIcon(imgurl, "");
 		if (icon != null)
 			setIcon(icon);
 
 		return c;
-	}
-
-	/** Returns an ImageIcon, or null if the path was invalid. */
-	private ImageIcon createImageIcon(String path, String description) {
-		URL imgURL = BookListCellRenderer.class.getResource(path);
-
-		if (imgURL != null) {
-			return new ImageIcon(imgURL, description);
-		} else {
-			return null;
-		}
 	}
 }
